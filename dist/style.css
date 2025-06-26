@@ -1,0 +1,128 @@
+body {
+    margin: 0;
+    overflow: hidden; /* 防止滾動條 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(45deg, #FF6B6B, #4ECDC4, #45B7D1, #FFA07A); /* 動態漸層背景 */
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite; /* 動態背景動畫 */
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.game-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    backdrop-filter: blur(5px); /* 磨砂玻璃效果 */
+}
+
+h1 {
+    color: #FFD700;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+.game-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.game-info p {
+    font-size: 1.2em;
+    margin-right: 20px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 0 5px;
+}
+
+button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+button#pauseButton {
+    background-color: #ffc107;
+}
+
+button#pauseButton:hover {
+    background-color: #e0a800;
+}
+
+canvas {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 3px solid #eee;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.controls {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+.history-container {
+    margin-top: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+    text-align: left;
+}
+
+.history-container h2 {
+    color: #FFD700;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+#historyList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#historyList li {
+    background-color: rgba(255, 255, 255, 0.08);
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95em;
+}
+
+#historyList li:last-child {
+    margin-bottom: 0;
+}
+
+#historyList li span {
+    font-weight: bold;
+    color: #FFDB58;
+}
